@@ -1,0 +1,17 @@
+concurrent = 4
+check_interval = 5
+log_level = "debug"
+log_format = "json"
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "Gitlab runner for smart store project"
+  url = "https://gitlab.com/"
+  token = "Bs56uKRwzt2VZkzCFkH7"
+  executor = "shell"
+  [runners.custom_build_dir]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]

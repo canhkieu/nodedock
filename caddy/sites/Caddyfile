@@ -1,0 +1,16 @@
+api.smartstore.azwebplus.ddns.net:80 {
+	proxy / node:3333
+  gzip
+  tls off
+
+  proxy /adonis-ws node:3333 {
+    websocket
+  }
+
+}
+
+cashier.smartstore.azwebplus.ddns.net:80 {
+	root /var/www/cashier
+  gzip
+  tls off
+}
