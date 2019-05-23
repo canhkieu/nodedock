@@ -1,8 +1,8 @@
-FROM mariadb:10.4.4
+FROM mariadb:latest
 
 LABEL maintainer="Cảnh Kiều <minhcanhdn0704@gmail.com>"
 
-COPY my.cnf /etc/mysql/conf.d/my.cnf
+COPY ./conf/my.cnf /etc/mysql/conf.d/my.cnf
 
 CMD ["mysqld"]
 

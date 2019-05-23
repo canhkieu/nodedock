@@ -83,3 +83,18 @@ services:
       - ${APP_CODE_PATH_HOST}:/home/gitlab-runner/www
       - ./gitlab-runner/conf:/etc/gitlab-runner
       - ./gitlab-runner/conf/docker.sock:/var/run/docker.sock
+
+  openproject:
+    build:
+      context: ./openproject
+    # links:
+    #   - mysql
+    environment:
+      - SECRET_KEY_BASE=${OPENPROJECT_SECRET_KEY}
+      # - DATABASE_URL=mysql2://default:secret@localhost:3306/openproject
+    volumes:
+      - ${DATA_PATH_HOST}/openproject/pgdata:/var/openproject/pgdata
+      - ${DATA_PATH_HOST}/openproject/static:/var/openproject/assets
+      # - ./openproject/config:/var/config
+    ports:
+      - 8888:8080
