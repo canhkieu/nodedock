@@ -65,9 +65,6 @@ services:
       - TZ=${WORKSPACE_TIMEZONE}
     ports:
       - "${MYSQL_PORT}:3306"
-    volumes:
-      - ${DATA_PATH_HOST}/mariadb:/var/lib/mysql
-      - ${MARIADB_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
 
   adminer:
     build:
